@@ -186,7 +186,7 @@
 > - 신뢰성 낮음
 > - 데이터의 전송 순서가 바뀔 수 있음
 > - TCP보다 전송속도가 빠름
-# Statck & Queue
+# Stack & Queue
 > Stack
 > - LIFO의 후입선출 구조
 > - push, pop을 이용하여 데이터조작
