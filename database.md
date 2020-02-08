@@ -4,3 +4,6 @@
 
 현재 만들어본 프로젝트에서는 sqlSession 을이용하여 rollback, commit 작업을 한다.
 jdbctemplete 에선 transactionManager를 이용할수 있지만 아직 활용해보지는 않았다.
+
+2. 트랜지션 전파
+https://springsource.tistory.com/136 여기가 정리가 잘된것 같다.

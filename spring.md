@@ -66,7 +66,50 @@
 스프링 프레임워크에서는 어노테이션을 이용한다.
 > - @Valid , @InitBinder
 
+# Security
+1. 사용하는 이유
+> - 인증 및 접근 할때에 사용한다. ex)로그인 / 페이지 접근
+> - 이전 원시적인 방법으로는 로그인한 유저가 아닌거를 쿠키나 세션으로 판단하여 처리를 하였다.
 
+이것도 java 와 xml 방법이 있다.
+현재는 xml 방법으로 공부하고 있지만 java 방법을 공부하여 할 생각이다.
 
+## xml
+1. 필터 등록
+```
+ <filter>
+  <filter-name>
+  springSecurityFilterChain
+  </filter-name>
+  <filter-class> org.springframework.web.filter.DelegatingFilterProxy
+  </filter-class>
+  </filter>
+    <filter-mapping>
+     <filter-name>
+     springSecurityFilterChain
+     </filter-name>
+     <url-pattern>
+     /*
+     </url-pattern>
+     </filter-mapping>
+```
+2. 설정파일(web.xml) 설정
+3. (로그인 중복방지를 위한 기능) 리스너 추가
+```
+<listener>
+  <listener-class> org.springframework.security.web.session.HttpSessionEventPublisher
+  </listener-class>
+</listener>
+```
+4. xml 설정 (security-context.xml)
+- login-page : 로그인 페이지 주소를 지정
+- username-parameter : 로그인 페이지 form에 있는 username을 저장할 변수이름 지정 (ID값)
+- password-parameter : 로그인 페이지 form에 있는 password를 저장할 변수이름 지정
+- login-processing-url : 로그인 페이지 form에 action에 입력할 주소 지정
 
-
+ex)
+ ```
+<form name="loginform" method="post" action="loginProcess">
+```
+- default-target-url : 로그인 성공시 호출할 주소 지정
+- authentication-failure-url : 로그인 실패시 호출할 주소 지정
