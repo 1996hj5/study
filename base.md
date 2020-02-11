@@ -8,7 +8,7 @@
 ```
 1.
 <context:component-scan base-package="com.ex.ex1.*" use-default-filters="false">
-	<context:include-filter        type="annotation" expression="org.springframework.stereotype.Controller" />
+	<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
 </context:component-scan>
 // 컨트롤러만 스캔한다. 참고로 default 는 @Controller , @Service , @Repository , @Component이다.
 여기서 use-default-filters 는 default애들을 스캔할껀지 확인하는 거다.
@@ -33,7 +33,7 @@ false 는 스캔하지 않고 true는 스캔한다.
 tiles 란 뷰 단의 탑, 사이드 , 메인 , 하단 등 을 페이지 include 방식으로 나누는 기존 구조를 쉽게 적용하기 위한 템플릿 프레임워크입니다. xml로 하여 편하게 작업할 수 있다.
 
 5. Lombok
-lombok이란 getter setter toString 등 여러가지를 합쳐놓은게 lombok이다. 사용방법은 우선 의존 라이브러리를 다운 받고 @getter @setter 등등을 사용할 수 있다. 전체다 사용하는 방법은 @Data 이다.
+lombok이란 getter setter toString 등 여러가지를 합쳐놓은게 lombok이다.  사용방법은 우선 의존 라이브러리를 다운 받고 @getter @setter 등등을 사용할 수 있다. 전체다 사용하는 방법은 @Data 이다.
 
 
 ```
