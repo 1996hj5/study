@@ -48,7 +48,18 @@
 > bean (ex) : 빈만 적용
 > - @Pointcut("bean(student)") : student 빈에만 적용
 
-# Security
+# AOP Transaction
+## AOP Transaction 이란?
+한개의 서비스를 할때 그안에 해야할 기능들이 많다.  그 기능들을 사용할때, 한번이라도 오류가 날수도 있다. 하지만 그오류로 인해 다른 기능들은 성공하엿지만 다시 Rollback을 해야한다. 이것을 AOP Transaction 으로 만들어 주었다. 참좋은녀석^^
+
+## 어덯게 이용하느냐?
+간단하다. xml로는 해보면 아주 간단하다.
+tx와 aop가 둘다 필요하다.
+우선 datasource에 tx를 장착!!
+tx에 메소드들을 지정한다.
+AOP 에 advice-ref에 tx 설정한것들을 가지고온다.
+
+# Security(하는중)
 
 # Other 어노테이션
 1. @PathVariable : 시맨틱 url 파리미터를 얻을 수 있다.
